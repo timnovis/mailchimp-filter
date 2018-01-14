@@ -1,0 +1,16 @@
+{
+  "name": "mailchimp-filter",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "node-fetch": "^1.7.3"
+  },
+  "description": "Find interesting signups in your MailChimp database",
+  "repository": "https://github.com/timnovis/mailchimp-filter.git",
+  "author": "Tim Novis <tim.novis@me.com>"
+}
