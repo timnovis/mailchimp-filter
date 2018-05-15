@@ -12,7 +12,7 @@ const fs = require('fs');
   try {
     console.log('Fetching lists...');
     const response = await fetch(
-      `https://${MC_DC}.api.mailchimp.com/3.0/lists/${MC_LIST}/members?count=100000`,
+      `https://${MC_DC}.api.mailchimp.com/3.0/lists/${MC_LIST}/members?count=20000&fields=members.email_address`,
       {
         method: 'GET',
         headers: {
@@ -63,7 +63,7 @@ const fs = require('fs');
       })
       .filter(e => e !== undefined);
 
-    fs.writeFile('list.csv', finalList.map(e => e + '\n'), 'utf8', err => {
+    fs.writeFile('list.csv', finalList.map(e => '\n' + e), 'utf8', err => {
       if (err) {
         throw new Error('Failed to write file');
       } else {
